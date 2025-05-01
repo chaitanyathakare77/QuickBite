@@ -1,34 +1,70 @@
 /* style.css */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #fefefe;
-  }
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fffdfd;
+}
   
-  header {
-    background: #ff4d4d;
-    color: #fff;
-    padding: 2rem 1rem;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ff4d4d;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.nav-links a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+.nav-links a:hover {
+  text-decoration: underline;
+}
+.cart-summary {
+  display: none;
+  position: fixed;
+  right: 1rem;
+  top: 5rem;
+  background: #fff;
+  border: 2px solid #ff4d4d;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+  width: 250px;
+}
+.cart-summary h3 {
+  margin-top: 0;
+  color: #ff4d4d;
+}
   
-  .menu {
+.menu {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 2rem;
-  }
+}
   
   .card {
     background: white;
     padding: 1rem;
     border-radius: 10px;
     width: 220px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    text-align: center;
+    position: relative;
   }
   
   .card:hover {
@@ -58,17 +94,51 @@ body {
   .btn:hover {
     background: #e64040;
   }
-  
-  .cart-summary {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background: white;
-    border: 2px solid #ff4d4d;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  .footer {
+    background: #333;
+    color: white;
+    padding: 2rem 1rem;
   }
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .footer-content div {
+    margin-bottom: 1rem;
+  }
+  .footer-content h4 {
+    border-bottom: 2px solid #ff4d4d;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+  .footer-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-content li {
+    margin-bottom: 0.5rem;
+  }
+  .copyright {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav-header {
+      flex-direction: column;
+      text-align: center;
+    }
+    .nav-links {
+      margin-top: 1rem;
+    }
+    .nav-links a {
+      display: inline-block;
+      margin: 0.5rem;
+    }
+  }
+  
   
   .chat {
     position: fixed;
@@ -103,4 +173,7 @@ body {
   .animate-zoom-in {
     animation: zoomIn 0.6s ease-in;
   }
+
   
+
+

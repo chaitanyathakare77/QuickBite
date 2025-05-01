@@ -6,14 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QuickBite - Real-time Food Ordering</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ 
 </head>
 <body>
-  <header class="animate-fade-in">
-    <h1>QuickBite</h1>
-    <p>Order your favorite food live!</p>
+  <header class="nav-header animate-fade-in">
+    <div class="logo">QuickBite</div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Special</a>
+      <a href="#">Chef</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact Us</a>
+      <a onclick="toggleCart()" class="cart-icon"><i class="fas fa-shopping-cart"></i> Order Food</a>
+    </nav>
   </header>
 
-  <div class="cart-summary animate-slide-in">
+  <div class="cart-summary" id="cartSummary">
     <h3>Cart</h3>
     <p>Items: <span id="cart-count">0</span></p>
     <p>Total: $<span id="cart-total">0.00</span></p>
@@ -21,41 +30,74 @@
 
   <section class="menu">
     <div class="card animate-zoom-in">
-      <img src="https://via.placeholder.com/200x150" alt="Pizza">
+      <img src="Asset/download.jpg/200x150" alt="Pizza">
       <h3>Pizza</h3>
       <p class="price">$12.00</p>
-      <button class="btn">Add to Cart</button>
+      <button class="btn" onclick="addToCart(12)">Add to Cart</button>
     </div>
     <div class="card animate-zoom-in">
       <img src="https://via.placeholder.com/200x150" alt="Burger">
       <h3>Burger</h3>
       <p class="price">$8.50</p>
-      <button class="btn">Add to Cart</button>
+      <button class="btn" onclick="addToCart(8.5)">Add to Cart</button>
     </div>
     <div class="card animate-zoom-in">
       <img src="https://via.placeholder.com/200x150" alt="Pasta">
       <h3>Pasta</h3>
       <p class="price">$10.00</p>
-      <button class="btn">Add to Cart</button>
+      <button class="btn" onclick="addToCart(10)">Add to Cart</button>
     </div>
   </section>
 
-  <div class="chat">
-    <!-- Tawk.to live chat widget -->
-    <script type="text/javascript">
-      var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-      (function () {
-        var s1 = document.createElement("script"),
-            s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/000000000/default'; // Replace with your widget ID
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-      })();
-    </script>
-  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li>Menu</li>
+          <li>Specials</li>
+          <li>Meal Deals</li>
+          <li>Catering Options</li>
+          <li>Seasonal Offerings</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Nutrition Information</li>
+          <li>Allergen Information</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li>Our Story</li>
+          <li>Careers</li>
+          <li>Terms of Service</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">Copyright © 2024 Web Design Mastery. All rights reserved.</p>
+  </footer>
 
-  <script src="script.js"></script>
+  <script>
+    let itemCount = 0;
+    let totalAmount = 0;
+
+    function toggleCart() {
+      const cart = document.getElementById('cartSummary');
+      cart.style.display = cart.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function addToCart(price) {
+      itemCount++;
+      totalAmount += price;
+      document.getElementById('cart-count').textContent = itemCount;
+      document.getElementById('cart-total').textContent = totalAmount.toFixed(2);
+    }
+  </script>
 </body>
 </html>

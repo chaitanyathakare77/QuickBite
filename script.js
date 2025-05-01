@@ -13,3 +13,5 @@ document.querySelectorAll(".btn").forEach((button) => {
     document.getElementById("cart-total").innerText = cartTotal.toFixed(2);
   });
 });
+
+
