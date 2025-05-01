@@ -1,0 +1,61 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickBite - Real-time Food Ordering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>QuickBite</h1>
+    <p>Order your favorite food live!</p>
+  </header>
+
+  <div class="cart-summary">
+    <h3>Cart</h3>
+    <p>Items: <span id="cart-count">0</span></p>
+    <p>Total: $<span id="cart-total">0.00</span></p>
+  </div>
+
+  <section class="menu">
+    <div class="card">
+      <img src="https://via.placeholder.com/200x150" alt="Pizza">
+      <h3>Pizza</h3>
+      <p class="price">$12.00</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/200x150" alt="Burger">
+      <h3>Burger</h3>
+      <p class="price">$8.50</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/200x150" alt="Pasta">
+      <h3>Pasta</h3>
+      <p class="price">$10.00</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+  </section>
+
+  <div class="chat">
+    <!-- Tawk.to live chat widget -->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/000000000/default'; // Replace with your widget ID
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
