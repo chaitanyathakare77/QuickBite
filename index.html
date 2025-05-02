@@ -1,4 +1,4 @@
-<!-- index.html -->
+<!-- index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,22 +112,183 @@
     </div>
     <p class="copyright">Copyright © 2024 Web Design Mastery. All rights reserved.</p>
   </footer>
+</body>
+</html> -->
 
-  <script>
-    let itemCount = 0;
-    let totalAmount = 0;
 
-    function toggleCart() {
-      const cart = document.getElementById('cartSummary');
-      cart.style.display = cart.style.display === 'block' ? 'none' : 'block';
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickBite - Real-time Food Ordering</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <header class="nav-header animate-fade-in">
+    <div class="logo">QuickBite</div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Special</a>
+      <a href="#">Chef</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact Us</a>
+      <a onclick="toggleCart()" class="cart-icon"><i class="fas fa-shopping-cart"></i> Order Food</a>
+    </nav>
+  </header>
 
-    function addToCart(price) {
-      itemCount++;
-      totalAmount += price;
-      document.getElementById('cart-count').textContent = itemCount;
-      document.getElementById('cart-total').textContent = totalAmount.toFixed(2);
-    }
-  </script>
+  <div class="cart-summary" id="cartSummary">
+    <h3>Cart</h3>
+    <p>Items: <span id="cart-count">0</span></p>
+    <p>Total: $<span id="cart-total">0.00</span></p>
+  </div>
+
+  <section class="menu">
+    <div class="card animate-zoom-in" data-price="12">
+      <img src="Asset/Pizza.jpg" alt="Pizza">
+      <h3>Pizza</h3>
+      <p class="price">$12.00</p>
+      <div class="cart-controls">
+        <button class="btn add-btn">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="minus">−</button>
+          <span class="quantity">0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="card animate-zoom-in" data-price="12">
+        <img src="Asset/Burger.jpg" alt="Burger">
+      <h3>Burger</h3>
+        <p class="price">$12.00</p>
+        <div class="cart-controls">
+          <button class="btn add-btn">Add to Cart</button>
+          <div class="quantity-controls" style="display: none;">
+            <button class="minus">−</button>
+            <span class="quantity">0</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="card animate-zoom-in" data-price="12">
+        <img src="Asset/Pasta.jpg" alt="Pasta">
+      <h3>Pasta</h3>
+        <p class="price">$12.00</p>
+        <div class="cart-controls">
+          <button class="btn add-btn">Add to Cart</button>
+          <div class="quantity-controls" style="display: none;">
+            <button class="minus">−</button>
+            <span class="quantity">0</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="card animate-zoom-in" data-price="12">
+        <img src="Asset/sandwich.jpg" alt="sandwich">
+        <h3>Sandwich</h3>
+        <p class="price">$12.00</p>
+        <div class="cart-controls">
+          <button class="btn add-btn">Add to Cart</button>
+          <div class="quantity-controls" style="display: none;">
+            <button class="minus">−</button>
+            <span class="quantity">0</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="card animate-zoom-in" data-price="12">
+        <img src="Asset/nooodles.jpg" alt="nooodles">
+        <h3>Noodles</h3>
+        <p class="price">$12.00</p>
+        <div class="cart-controls">
+          <button class="btn add-btn">Add to Cart</button>
+          <div class="quantity-controls" style="display: none;">
+            <button class="minus">−</button>
+            <span class="quantity">0</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="card animate-zoom-in" data-price="12">
+        <img src="Asset/fries.jpg" alt="fries">
+        <h3>Fries</h3>
+        <p class="price">$12.00</p>
+        <div class="cart-controls">
+          <button class="btn add-btn">Add to Cart</button>
+          <div class="quantity-controls" style="display: none;">
+            <button class="minus">−</button>
+            <span class="quantity">0</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="card animate-zoom-in" data-price="12">
+        <img src="Asset/fried chicken.jpg" alt="fried chicken">
+        <h3>Fried Chicken</h3>
+        <p class="price">$12.00</p>
+        <div class="cart-controls">
+          <button class="btn add-btn">Add to Cart</button>
+          <div class="quantity-controls" style="display: none;">
+            <button class="minus">−</button>
+            <span class="quantity">0</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+    <!-- Add more cards below (repeat structure) -->
+    <div class="card animate-zoom-in" data-price="8.5">
+        <img src="Asset/donut.jpg" alt="donut">
+        <h3>Donut</h3>
+      <p class="price">$8.50</p>
+      <div class="cart-controls">
+        <button class="btn add-btn">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="minus">−</button>
+          <span class="quantity">0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat for other items -->
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li>Menu</li>
+          <li>Specials</li>
+          <li>Meal Deals</li>
+          <li>Catering Options</li>
+          <li>Seasonal Offerings</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Nutrition Information</li>
+          <li>Allergen Information</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li>Our Story</li>
+          <li>Careers</li>
+          <li>Terms of Service</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">Copyright © 2024 Web Design Mastery. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
