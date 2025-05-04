@@ -89,35 +89,48 @@
   </style>
 </head>
 <body>
-  <h1>Welcome to QuickBite</h1>
-  <p>Delicious meals delivered fast and fresh.</p>
-  <button class="btn" onclick="openModal()">Get Started</button>
-
-  <div class="modal" id="loginModal">
-    <div class="modal-content">
-      <h2>Login / Register</h2>
-      <input type="text" id="username" placeholder="Username" required />
-      <input type="password" id="password" placeholder="Password" required />
-      <button onclick="login()">Continue</button>
+    <h1>Welcome to QuickBite</h1>
+    <p>Delicious meals delivered fast and fresh.</p>
+    <button class="btn" onclick="openModal()">Get Started</button>
+  
+    <div class="modal" id="authModal">
+      <div class="modal-content">
+        <h2 id="modal-title">Login</h2>
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button onclick="handleAuth()">Submit</button>
+        <p style="text-align:center; margin-top:10px;">
+          <a href="#" onclick="toggleForm()">Switch to <span id="form-type">Register</span></a>
+        </p>
+      </div>
     </div>
-  </div>
-
-  <script>
-    function openModal() {
-      document.getElementById('loginModal').style.display = 'flex';
-    }
-
-    function login() {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-
-      if (username && password) {
+  
+    <script>
+      let isLogin = true;
+  
+      function openModal() {
+        document.getElementById('authModal').style.display = 'flex';
+      }
+  
+      function toggleForm() {
+        isLogin = !isLogin;
+        document.getElementById('modal-title').textContent = isLogin ? 'Login' : 'Register';
+        document.getElementById('form-type').textContent = isLogin ? 'Register' : 'Login';
+      }
+  
+      function handleAuth() {
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+  
+        if (!username || !password) {
+          alert("Please fill in both fields.");
+          return;
+        }
+  
+        // Simulate login/register
         localStorage.setItem("quickbite_user", username);
         window.location.href = "index.html";
-      } else {
-        alert("Please enter both username and password.");
       }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>

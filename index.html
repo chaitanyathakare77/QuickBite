@@ -134,8 +134,19 @@
       <a href="#">Chef</a>
       <a href="#">Clients</a>
       <a href="#">Contact Us</a>
-      <a onclick="toggleCart()" class="cart-icon"><i class="fas fa-shopping-cart"></i> Order Food</a>
-    </nav>
+      <a onclick="toggleCart()" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i> Order Food
+      </a>
+      <div style="position: relative;">
+        <button onclick="handleProfileClick()" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">
+          👤 <span id="profile-name">Profile</span>
+        </button>
+        <div id="profileMenu" style="display: none; position: absolute; top: 30px; right: 0; background: white; color: black; padding: 10px; border-radius: 5px;">
+          <p id="profileUser">Logged in as: </p>
+          <button onclick="logout()" style="background: #ff4d4d; color: white; border: none; padding: 5px 10px; cursor: pointer;">Logout</button>
+        </div>
+      </div>
+        </nav>
   </header>
 
   <div class="cart-summary" id="cartSummary">
